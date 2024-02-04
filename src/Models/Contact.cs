@@ -1,3 +1,5 @@
+using ContactManagementAPI.Models.DTO;
+
 namespace ContactManagementAPI.Models.Entities;
 
 public class Contact
@@ -11,4 +13,9 @@ public class Contact
     public string? Phone { get; set; }
 
     public string? Email { get; set; }
+
+    public ContactDTO ToContactDTO()
+    {
+        return new ContactDTO(this);
+    }
 }
